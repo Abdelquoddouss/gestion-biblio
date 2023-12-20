@@ -38,14 +38,14 @@
 
       <div class="inputBox"> 
 
-       <input type="email" name="email" > <i>email</i>
+       <input type="email" id="email" name="email" > <i>email</i>
        <span class="error">Vous n'avez pas saisi de données dans ce champ</span> 
 
       </div> 
 
       <div class="inputBox"> 
 
-       <input type="password" name="password" > <i>Password</i>
+       <input type="password" id="password" name="password" > <i>Password</i>
        <span class="error">Vous n'avez pas saisi de données dans ce champ</span> 
 
       </div> 

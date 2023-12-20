@@ -47,17 +47,17 @@
       </div> 
       <div class="inputBox"> 
 
-       <input type="email"  name="email" required> <i>email</i> 
+       <input type="email"  id="email" name="email" required> <i>email</i> 
        <span class="error">Vous n'avez pas saisi de données dans ce champ</span>
       </div> 
       <div class="inputBox"> 
 
-       <input type="password" name="password" required> <i>Password</i> 
+       <input type="password" id="password" name="password" required> <i>Password</i> 
        <span class="error">Vous n'avez pas saisi de données dans ce champ</span>
       </div> 
       <div class="inputBox"> 
 
-       <input type="number" name="phone" required> <i>phone</i> 
+       <input type="number" id="phone" name="phone" required> <i>phone</i> 
        <span class="error">Vous n'avez pas saisi de données dans ce champ</span>    
       </div> 
 

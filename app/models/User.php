@@ -35,11 +35,21 @@
                 $stmt->bindValue(5, $this->phone);
                 $result = $stmt->execute();
                 $stmt->closeCursor();
+                $userid = $pdo->lastInsertId();
+                 $sql = "INSERT INTO users_role (users_id,role_id) VALUES (:users_id,2)";
+                   $statement = $pdo->prepare($sql);
+                     $statement->bindValue(':users_id', $userid, PDO::PARAM_INT);
+                       $statement->execute();
             
         }
 
         public function getUserByUsername(){ 
-            $sql = "SELECT * FROM users WHERE email = ?";
+            $sql = " SELECT * from users
+            INNER JOIN users_role
+            ON users.id=users_role.users_id 
+            INNER join role 
+            ON role.id = users_role.Role_id 
+            WHERE email = ?";
             
             $pdo = DatabaseConnection::connect();
             $stmt = $pdo->prepare($sql);

@@ -18,10 +18,15 @@
             }elseif (empty($data)) {
                 echo"email not on data base";
             }else {
-                if($data&&password_verify($password,$data['password'])){
+                if(password_verify($password,$data['password'])){
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $password;
-                    header("location: ../views/index.php");
+                    header("location: ../views/Dachboard.php");
+                    if ($data['name']=='admin') {
+                        header("location:../../../views/Dachboard.php");
+                    }elseif($data['name']=='utilisateur'){
+                        header("location:../../../index.php");
+                    }
                 }
             }
         }
