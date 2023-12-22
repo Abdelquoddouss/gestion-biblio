@@ -1,3 +1,10 @@
+<?php
+require __DIR__ . '/../app/models/Book.php';
+
+$book = new Book();
+$allBooks = $book->getAlll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -167,7 +174,6 @@
                                 <option value="">15</option>
                             </select>
                         </div>
-
                     </div>
                 </div>
                 <div class="categories col-lg-9">
@@ -178,13 +184,18 @@
                     </div>
                 </div>
 
+                <?php for ($i = 1; $i <= ceil(count($allBooks) / 3); $i++) : ?>
                 <div class="cards-products">
+                    <?php 
+                    $max = count($allBooks) >= $i * 3 ? $i * 3 : count($allBooks);
+                    for ($j = ($i - 1) * 3;$j < $max; $j++) : ?>
+
                     <div class="card-product">
                         <div class="image-product">
                         <img src="../public/img/81QiCy9v6oL._SL800_.jpg" alt="">
                         </div>
                         <div class="description">
-                            <h6>Le petit prince</h6>
+                            <h6><?= $allBooks[$j]['title'] ?></h6>
                             <span>$250</span>
                             <div class="stars-icons">
                                 <img src="img/star-co.png" alt="" srcset="">
@@ -202,222 +213,11 @@
                             <img src="img/like.png" alt="" srcset="">
                         </div>
                     </div>
-
-                    <div class="card-product">
-                        <div class="image-product">
-                            <img src="../public/img/burn-after-writing-livre-bruler-131-700x700.png" alt="">
-                        </div>
-                        <div class="description">
-                            <h6>leather handbag</h6>
-                            <span>$ 250</span>
-                            <div class="stars-icons">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star.png" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="share">
-
-                            <img src="img/share.png" alt="" srcset="">
-                            <a href="#">add to cart</a>
-                            <img src="img/like.png" alt="" srcset="">
-                        </div>
-                    </div>
-
-                    <div class="card-product">
-                        <div class="image-product">
-                            <img src="../public/img/couv-625x1024.jpg" alt="">
-                        </div>
-                        <div class="description">
-                            <h6>le chateau des trompe-loeil</h6>
-                            <span>$ 25</span>
-                            <div class="stars-icons">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star.png" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="share">
-
-                            <img src="img/share.png" alt="" srcset="">
-                            <a href="#">add to cart</a>
-                            <img src="img/like.png" alt="" srcset="">
-                        </div>
-                    </div>
+                    <?php endfor ?>
                 </div>
+                <?php endfor ?>
 
 
-                <!-- cards 2 -->
-                <div class="categories col-lg-9">
-                    <div class="categorie">Moroccan lamps</div>
-                    <div class="more">
-                        <p>browse more</p>
-                        <img src="img/next.png" alt="" srcset="">
-                    </div>
-                </div>
-
-                <div class="cards-products">
-                    <div class="card-product">
-                        <div class="image-product">
-                            <img src="../public/img/images.jpg" alt="">
-                        </div>
-                        <div class="description">
-                            <h6>JOE</h6>
-                            <span>$ 25</span>
-                            <div class="stars-icons">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star.png" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="share">
-
-                            <img src="img/share.png" alt="" srcset="">
-                            <a href="#">add to cart</a>
-                            <img src="img/like.png" alt="" srcset="">
-                        </div>
-                    </div>
-
-                    <div class="card-product">
-                        <div class="image-product">
-                            <img src="../public/img/l'art20perdre.webp" alt="">
-                        </div>
-                        <div class="description">
-                            <h6>PRIX GONCOURT</h6>
-                            <span>$ 25</span>
-                            <div class="stars-icons">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star.png" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="share">
-
-                            <img src="img/share.png" alt="" srcset="">
-                            <a href="#">add to cart</a>
-                            <img src="img/like.png" alt="" srcset="">
-                        </div>
-                    </div>
-
-                    <div class="card-product">
-                        <div class="image-product">
-                            <img src="../public/img/trois-mousquetaires-livre-843x1200.webp" alt="">
-                        </div>
-                        <div class="description">
-                            <h6>Les trois mousquetaires</h6>
-                            <span>$ 25</span>
-                            <div class="stars-icons">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star.png" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="share">
-
-                            <img src="img/share.png" alt="" srcset="">
-                            <a href="#">add to cart</a>
-                            <img src="img/like.png" alt="" srcset="">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card3 -->
-                <div class="categories col-lg-9">
-                    <div class="categorie">Morrocan chairs</div>
-                    <div class="more">
-                        <p>browse more</p>
-                        <img src="img/next.png" alt="" srcset="">
-                    </div>
-                </div>
-
-                <div class="cards-products">
-                    <div class="card-product">
-                        <div class="image-product">
-                            <img src="../public/img/unesilongueabsence.jpg" alt="">
-                        </div>
-                        <div class="description">
-                            <h6>unesi langue </h6>
-                            <span>$ 25</span>
-                            <div class="stars-icons">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star.png" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="share">
-
-                            <img src="img/share.png" alt="" srcset="">
-                            <a href="#">add to cart</a>
-                            <img src="img/like.png" alt="" srcset="">
-                        </div>
-                    </div>
-
-                    <div class="card-product">
-                        <div class="image-product">
-                            <img src="../public/img/CVT_CVT_Le-tour-du-monde-en-quatre-vingts-jours_1211 (1).webp" alt="">
-                        </div>
-                        <div class="description">
-                            <h6>jules verne</h6>
-                            <span>$ 25</span>
-                            <div class="stars-icons">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star.png" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="share">
-
-                            <img src="img/share.png" alt="" srcset="">
-                            <a href="#">add to cart</a>
-                            <img src="img/like.png" alt="" srcset="">
-                        </div>
-                    </div>
-
-                    <div class="card-product">
-                        <div class="image-product">
-                            <img src="../public/img/main-qimg-1e941b90977113a9073579e190085c97-lq.jpg" alt="">
-                        </div>
-                        <div class="description">   
-                            <h6>Notre dame de paris</h6>
-                            <span>$ 25</span>
-                            <div class="stars-icons">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star-co.png" alt="" srcset="">
-                                <img src="img/star.png" alt="" srcset="">
-
-                            </div>
-                        </div>
-                        <div class="share">
-
-                            <img src="img/share.png" alt="" srcset="">
-                            <a href="#">add to cart</a>
-                            <img src="img/like.png" alt="" srcset="">
-                        </div>
-                    </div>
-                </div>
 
             
 

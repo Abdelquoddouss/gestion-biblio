@@ -1,6 +1,6 @@
 <?php
     include_once '../controllers/AuthController.php';
-      
+    
     class User{
         public $pdo;
         public $fullname;
@@ -36,10 +36,10 @@
                 $result = $stmt->execute();
                 $stmt->closeCursor();
                 $userid = $pdo->lastInsertId();
-                 $sql = "INSERT INTO users_role (users_id,role_id) VALUES (:users_id,2)";
-                   $statement = $pdo->prepare($sql);
-                     $statement->bindValue(':users_id', $userid, PDO::PARAM_INT);
-                       $statement->execute();
+                $sql = "INSERT INTO users_role (users_id,role_id) VALUES (:users_id,2)";
+                $statement = $pdo->prepare($sql);
+                    $statement->bindValue(':users_id', $userid, PDO::PARAM_INT);
+                    $statement->execute();
             
         }
 

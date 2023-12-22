@@ -74,13 +74,13 @@
 					<i class="ph-browsers"></i>
 					<span>Dashboard</span>
 				</a>
-				<a href="./PageDachboard.php">
+				<a href="./TableauAdmin.php">
 					<i class="ph-check-square"></i>
 					<span>library tables</span>
 				</a>
-				<a href="#">
+				<a href="./TableBook.php">
 					<i class="ph-swap"></i>
-					<span>Transfers</span>
+					<span>Table BOOK</span>
 				</a>
 				<a href="#">
 					<i class="ph-file-text"></i>

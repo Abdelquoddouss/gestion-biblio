@@ -1,3 +1,11 @@
+<?php 
+	include_once '../app/controllers/AdminControlller.php';
+	$data= new AdminController();
+	$util=$data->getAllUsers();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -75,13 +83,13 @@
 					<i class="ph-browsers"></i>
 					<span>Dashboard</span>
 				</a>
-				<a href="./PageDachboard.php">
+				<a href="./TableauAdmin.php">
 					<i class="ph-check-square"></i>
-					<span>library tables</span>
+					<span> Tables User</span>
 				</a>
-				<a href="#">
+				<a href="./TableBook.php">
 					<i class="ph-swap"></i>
-					<span>Transfers</span>
+					<span>table BOOK</span>
 				</a>
 				<a href="#">
 					<i class="ph-file-text"></i>
@@ -109,32 +117,24 @@
         <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-      <th scope="col">Handle</th>
-     
+      <th scope="col">full name</th>
+      <th scope="col">last name</th>
+      <th scope="col">email</th>
+      <th scope="col">phone</th>
+       
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <?php
+		foreach($util as $utilisateur ):?>
+		<tr>
+      <th scope="row"><?php echo $utilisateur['fullname'];?></th>
+	  <th scope="row"><?php echo $utilisateur['lastname']; ?></th>     
+	  <th scope="row"><?php echo $utilisateur['email']; ?></th>
+	  <th scope="row"><?php echo $utilisateur['phone']; ?></th>
+        
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+		<?php endforeach;?>
   </tbody>
 </table>
 	</div>
