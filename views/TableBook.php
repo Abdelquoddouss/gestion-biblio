@@ -1,7 +1,8 @@
 <?php 
- include_once '../app/controllers/BookControllers.php';
- $data= new BookControllers();
- $uti=$data->getAllBook();
+  require_once __DIR__ . '/../../vendor/autoload.php';
+  use app\controllers\BookControllers;
+  $data= new BookControllers();
+$uti=$data->getAllBook();
 ?>
 
 

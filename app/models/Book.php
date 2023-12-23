@@ -1,11 +1,14 @@
 <?php
-    include_once __DIR__.'/../config/connection.php';
+namespace app\models;
+  require_once __DIR__ . '/../../vendor/autoload.php';
+  use app\config\DatabaseConnection;
+  use  PDO;
 
 class Book{
 
     static public function getAlll(){
 
-        $stmt = DatabaseConnection:: connect()->prepare('SELECT * FROM book');
+        $stmt = DatabaseConnection::connect()->prepare('SELECT * FROM book');
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -27,9 +30,6 @@ class Book{
         
 
     } 
-
-
-
 
 }
 

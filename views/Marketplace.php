@@ -1,8 +1,12 @@
 <?php
-require __DIR__ . '/../app/models/Book.php';
 
-$book = new Book();
-$allBooks = $book->getAlll();
+ require_once __DIR__ . '/../vendor/autoload.php';
+
+use app\controllers\BookControllers;
+
+$book = new BookControllers();
+ $allBooks = $book->getAllBooks();
+
 ?>
 
 <!DOCTYPE html>

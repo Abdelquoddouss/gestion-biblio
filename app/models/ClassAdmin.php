@@ -1,5 +1,7 @@
 <?php
-    include_once __DIR__.'/../config/connection.php';
+    namespace app\models;
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    use app\config\DatabaseConnection;
 
     class Admin{
         static public function getAll(){
@@ -10,21 +12,6 @@
         }
 
 
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
 
 ?>

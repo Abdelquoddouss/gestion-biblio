@@ -1,5 +1,8 @@
 <?php
-    include_once '../controllers/AuthController.php';
+    namespace app\models;
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    use app\config\DatabaseConnection;
+    use PDO;
     
     class User{
         public $pdo;
@@ -44,11 +47,11 @@
         }
 
         public function getUserByUsername(){ 
-            $sql = " SELECT * from users
-            INNER JOIN users_role
-            ON users.id=users_role.users_id 
-            INNER join role 
-            ON role.id = users_role.Role_id 
+            $sql = " SELECT * from users u
+            INNER JOIN users_role ur
+            ON u.id = ur.users_id 
+            INNER join role r
+            ON r.id = ur.Role_id 
             WHERE email = ?";
             
             $pdo = DatabaseConnection::connect();
@@ -58,8 +61,8 @@
     
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $stmt->closeCursor();
-    
             return $row;
+            
         }
 
 }

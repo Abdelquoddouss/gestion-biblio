@@ -33,7 +33,7 @@
     <div class="content"> 
 
      <h2>Sign In</h2> 
-     <form action="../app//controllers/AuthController.php" method="post">
+     <form action="../app/controllers/AuthController.php" method="post">
      <div class="form"> 
 
       <div class="inputBox"> 

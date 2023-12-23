@@ -82,9 +82,9 @@
 					<i class="ph-swap"></i>
 					<span>Table BOOK</span>
 				</a>
-				<a href="#">
+				<a href="./Marketplace.php">
 					<i class="ph-file-text"></i>
-					<span>Templates</span>
+					<span>la place de les utilisateur</span>
 				</a>
 				<a href="#">
 					<i class="ph-globe"></i>

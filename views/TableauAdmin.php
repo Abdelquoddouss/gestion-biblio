@@ -1,8 +1,6 @@
 <?php 
-	include_once '../app/controllers/AdminControlller.php';
-	$data= new AdminController();
-	$util=$data->getAllUsers();
-
+ require_once __DIR__ . '/../../vendor/autoload.php';
+ use app\controllers\AdminController;	
 ?>
 
 

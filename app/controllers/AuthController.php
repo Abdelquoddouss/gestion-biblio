@@ -1,6 +1,7 @@
 <?php
-    include '../config/connection.php';
-    include '../models/User.php';
+    require_once __DIR__ . '/../../vendor/autoload.php';
+    use app\models\User;
+
     session_start();
     class AuthController
     {
@@ -10,22 +11,25 @@
             header("location: ../../../views/login.php");
         }
 
-        public function login($email,$password,){
-            $obj= new User(null,null,$email,$password,null);
-            $data=$obj->getUserByUsername();
-            if(empty($email)|| empty($password)){
+        public function login($email,$password){
+            
+
+            if(empty($email) || empty($password)){
                 echo"von avez pas enregistrer le nom et prenom";
-            }elseif (empty($data)) {
-                echo"email not on data base";
             }else {
+                $obj= new User(null,null,$email,$password,null);
+                $data=$obj->getUserByUsername();
+
                 if(password_verify($password,$data['password'])){
+                    echo "hello";
+
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $password;
-                    header("location: ../views/Dachboard.php");
+                    header("location: ../../views/Dachboard.php");
                     if ($data['name']=='admin') {
-                        header("location:../../../views/Dachboard.php");
+                        header("location: ../../views/Dachboard.php");
                     }elseif($data['name']=='utilisateur'){
-                        header("location:../../../index.php");
+                        header("location: ../../views/Marketplace.php");
                     }
                 }
             }
